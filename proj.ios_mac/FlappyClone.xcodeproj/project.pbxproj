@@ -55,6 +55,7 @@
 		521A8E6519F0C34300D177D7 /* Default-736h@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 521A8E6319F0C34300D177D7 /* Default-736h@3x.png */; };
 		521A8EA919F11F5000D177D7 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 521A8EA819F11F5000D177D7 /* fonts */; };
 		521A8EAA19F11F5000D177D7 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 521A8EA819F11F5000D177D7 /* fonts */; };
+		B03A9A9A1A6A7D16008B45CF /* Pipe.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B03A9A981A6A7D16008B45CF /* Pipe.cpp */; };
 		B089C7D21A5ACEB4001977C0 /* ipad in Resources */ = {isa = PBXBuildFile; fileRef = B089C7CD1A5ACEB4001977C0 /* ipad */; };
 		B089C7D31A5ACEB4001977C0 /* ipad in Resources */ = {isa = PBXBuildFile; fileRef = B089C7CD1A5ACEB4001977C0 /* ipad */; };
 		B089C7D41A5ACEB4001977C0 /* ipadhd in Resources */ = {isa = PBXBuildFile; fileRef = B089C7CE1A5ACEB4001977C0 /* ipadhd */; };
@@ -163,6 +164,8 @@
 		521A8E6219F0C34300D177D7 /* Default-667h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-667h@2x.png"; sourceTree = "<group>"; };
 		521A8E6319F0C34300D177D7 /* Default-736h@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-736h@3x.png"; sourceTree = "<group>"; };
 		521A8EA819F11F5000D177D7 /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fonts; sourceTree = "<group>"; };
+		B03A9A981A6A7D16008B45CF /* Pipe.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Pipe.cpp; sourceTree = "<group>"; };
+		B03A9A991A6A7D16008B45CF /* Pipe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pipe.h; sourceTree = "<group>"; };
 		B089C7CD1A5ACEB4001977C0 /* ipad */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ipad; sourceTree = "<group>"; };
 		B089C7CE1A5ACEB4001977C0 /* ipadhd */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ipadhd; sourceTree = "<group>"; };
 		B089C7CF1A5ACEB4001977C0 /* iphone */ = {isa = PBXFileReference; lastKnownFileType = folder; path = iphone; sourceTree = "<group>"; };
@@ -320,6 +323,8 @@
 		46880B8319C43A87006E1F66 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				B03A9A981A6A7D16008B45CF /* Pipe.cpp */,
+				B03A9A991A6A7D16008B45CF /* Pipe.h */,
 				B089C7F81A5ADEB9001977C0 /* AppDelegate.cpp */,
 				B089C7F91A5ADEB9001977C0 /* AppDelegate.h */,
 				B089C7F71A5ADA19001977C0 /* Definitions.h */,
@@ -541,6 +546,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B03A9A9A1A6A7D16008B45CF /* Pipe.cpp in Sources */,
 				B089C7EF1A5AD0F0001977C0 /* GameOverScene.cpp in Sources */,
 				B089C7F51A5AD0F0001977C0 /* SplashScene.cpp in Sources */,
 				B089C7F31A5AD0F0001977C0 /* MainMenuScene.cpp in Sources */,
