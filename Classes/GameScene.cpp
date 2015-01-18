@@ -1,5 +1,6 @@
 #include "GameScene.h"
 #include "Definitions.h"
+#include "GameOverScene.h"
 
 USING_NS_CC;
 
@@ -39,6 +40,8 @@ bool GameScene::init()
     this->addChild(backgroundSprite);
     
     auto edgeBody = PhysicsBody::createEdgeBox(visibleSize, PHYSICSBODY_MATERIAL_DEFAULT, 3);
+    edgeBody->setCollisionBitmask(OBSTACLE_COLLISION_BITMASK);
+    edgeBody->setContactTestBitmask(false);
     
     auto edgeNode = Node::create();
     edgeNode->setPosition(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y);
@@ -51,10 +54,30 @@ bool GameScene::init()
     
     bird = new Bird(this);
     
+    auto contactListener = EventListenerPhysicsContact::create();
+    contactListener->onContactBegin = CC_CALLBACK_1(GameScene::onContactBegin, this);
+    Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(contactListener, this);
+    
     return true;
 }
 
 void GameScene::SpawnPipe(float dt)
 {
     pipe.SpawnPipe(this);
+}
+
+bool GameScene::onContactBegin(cocos2d::PhysicsContact &contact)
+{
+    PhysicsBody *a = contact.getShapeA()->getBody();
+    PhysicsBody *b = contact.getShapeB()->getBody();
+    
+    if ((BIRD_COLLISION_BITMASK == a->getCollisionBitmask() && OBSTACLE_COLLISION_BITMASK == b->getCollisionBitmask()) ||
+        (BIRD_COLLISION_BITMASK == b->getCollisionBitmask() && OBSTACLE_COLLISION_BITMASK == a->getCollisionBitmask())
+    ) {
+        auto scene = GameOverScene::createScene();
+        
+        Director::getInstance()->replaceScene(TransitionFade::create(TRANSITION_TIME, scene));
+    }
+    
+    return true;
 }
